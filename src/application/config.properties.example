@@ -1,0 +1,25 @@
+# =================================================================
+# ÖRNEK YAPILANDIRMA DOSYASI
+# =================================================================
+# Bu dosya bir şablondur. Projenin çalışması için bu dosyanın bir kopyasını
+# 'config.properties' adıyla oluşturun ve aşağıdaki değerleri kendi
+# yerel bilgilerinizle doldurun.
+# Gerçek bilgileri içeren 'config.properties' dosyası .gitignore'da
+# listelendiği için GitHub'a gönderilmez.
+# =================================================================
+
+# Veritabanı Bağlantı Bilgileri
+db.url=jdbc:mysql://localhost:3306/sinemadb?useUnicode=true&characterEncoding=UTF-8
+db.user=kullanici_adiniz_buraya
+db.password=sifreniz_buraya
+
+# E-posta Ayarları (Eğer kullanılıyorsa)
+# Projenizin e-posta gönderme özelliği varsa bu ayarları doldurun.
+# email.host=smtp.mailsunucunuz.com
+# email.port=587
+# email.user=eposta@adresiniz.com
+# email.password=eposta_sifreniz
+# email.auth=true
+# email.tls.enable=true
+
+
