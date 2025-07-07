@@ -13,8 +13,7 @@ build.fxbuild
 # Genel log dosyaları
 *.log
 
-# Proje dışa aktarıldığında oluşan paket dosyaları
-*.jar
+# Proje dışa aktarıldığında oluşan paket dosyaları (WAR dosyaları)
 *.war
 
 # Kullanıcıya özel diğer dosyalar
