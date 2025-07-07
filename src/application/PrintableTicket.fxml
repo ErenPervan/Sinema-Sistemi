@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox prefWidth="420.0" spacing="15.0" style="-fx-background-color: #f4f4f8; -fx-font-family: 'Segoe UI', Arial, sans-serif;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PrintableTicketController">
+    <padding>
+        <Insets bottom="20.0" left="25.0" right="25.0" top="15.0" />
+    </padding>
+    <children>
+        <Label fx:id="lblSinemaAdi" alignment="CENTER" maxWidth="Infinity" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="PERVAN SİNEMA BİLETİ" />
+        
+        <GridPane hgap="10.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="100.0" prefWidth="110.0" />
+                <ColumnConstraints hgrow="ALWAYS" prefWidth="250.0" />
+            </columnConstraints>
+            
+            <children>
+                <Label text="Film Adı:" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #34495e;" />
+                <Label fx:id="lblBiletFilmAdi" text="[Film Adı]" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;" />
+
+                <Label text="Salon:" GridPane.rowIndex="1" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #34495e;" />
+                <Label fx:id="lblBiletSalonAdi" text="[Salon Adı]" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;" />
+                
+                <Label text="Şehir:" GridPane.rowIndex="2" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #34495e;" />
+                <Label fx:id="lblBiletSehirAdi" text="[Şehir Adı]" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;" />
+
+                <Label text="Seans:" GridPane.rowIndex="3" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #34495e;" />
+                <Label fx:id="lblBiletSeansZamani" text="[Seans Zamanı]" GridPane.columnIndex="1" GridPane.rowIndex="3" style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;" />
+
+                <Label text="Koltuk No:" GridPane.rowIndex="4" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #34495e;" />
+                <Label fx:id="lblBiletKoltukNo" text="[Koltuk No]" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;" />
+
+                <Label text="Ad Soyad:" GridPane.rowIndex="5" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #34495e;" />
+                <Label fx:id="lblBiletAdSoyad" text="[Ad Soyad]" GridPane.columnIndex="1" GridPane.rowIndex="5" style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;" />
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </GridPane>
+        
+        <Separator>
+            <VBox.margin>
+                <Insets top="10.0" bottom="5.0" />
+            </VBox.margin>
+        </Separator>
+        
+        <GridPane hgap="10.0" vgap="8.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="100.0" prefWidth="110.0" />
+                <ColumnConstraints hgrow="ALWAYS" prefWidth="250.0" />
+            </columnConstraints>
+            <children>
+                <Label text="Bilet No (Rez. ID):" GridPane.rowIndex="0" style="-fx-font-size: 13px; -fx-text-fill: #555;" />
+                <Label fx:id="lblBiletRezervasyonID" text="[Rez ID]" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 13px; -fx-text-fill: #2c3e50;" />
+
+                <Label text="Satın Alma Tarihi:" GridPane.rowIndex="1" style="-fx-font-size: 13px; -fx-text-fill: #555;" />
+                <Label fx:id="lblBiletAlinmaTarihi" text="[Alınma Tarihi]" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 13px; -fx-text-fill: #2c3e50;" />
+            </children>
+        </GridPane>
+
+
+        
+        <VBox alignment="CENTER" spacing="5.0">
+            <VBox.margin>
+                <Insets top="25.0" />
+            </VBox.margin>
+            <children>
+            <ImageView fx:id="imgQRCode" fitHeight="150.0" fitWidth="150.0" preserveRatio="true"> <VBox.margin>
+                        <Insets top="15.0" bottom="5.0"/> </VBox.margin>
+                </ImageView>
+                <Button fx:id="btnIndirQR" text="QR Kodu İndir" onAction="#handleIndirQR" styleClass="button" disable="true"> <VBox.margin>
+                        <Insets bottom="10.0"/>
+                    </VBox.margin>
+                </Button>
+                <Label text="İyi Seyirler Dileriz!" style="-fx-font-size: 15px; -fx-font-style: italic; -fx-text-fill: #34495e;" />
+                <Label text="www.pervansinema.com" style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;" />
+            </children>
+        </VBox>
+        
+        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <children>
+                <Button fx:id="btnPrintTicket" onAction="#handlePrintTicket" styleClass="action-button" text="Yazdır (Sim.)" />
+                <Button fx:id="btnCloseTicket" onAction="#handleCloseTicket" styleClass="cancel-button" text="Kapat" />
+            </children>
+            <VBox.margin>
+                <Insets top="20.0"/>
+            </VBox.margin>
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1000.0" prefWidth="1850.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardStatsController">
+   <top>
+      <VBox alignment="CENTER" styleClass="header-pane">
+         <children>
+            <Label styleClass="title-label" text="Genel Dashboard İstatistikleri">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" spacing="15.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER" spacing="20.0" style="-fx-padding: 0 0 10 0;">
+               <children>
+                  <VBox alignment="CENTER" spacing="5" styleClass="stat-mini-card">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image><Image url="@icons/placeholder.png" /></image>
+                        </ImageView>
+                        <Label styleClass="stat-mini-card-title" text="Toplam İl Sayısı" />
+                        <Label fx:id="lblToplamIl" styleClass="stat-mini-card-value" text="0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="5" styleClass="stat-mini-card">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image><Image url="@icons/cinema2.png" /></image>
+                        </ImageView>
+                        <Label styleClass="stat-mini-card-title" text="Toplam Salon Sayısı" />
+                        <Label fx:id="lblToplamSalon" styleClass="stat-mini-card-value" text="0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <Separator prefWidth="200.0" />
+
+            <ScrollPane fitToHeight="true" hbarPolicy="AS_NEEDED" prefHeight="313.0" prefWidth="1160.0" vbarPolicy="NEVER"> 
+                                                                                    <content>
+                  <HBox alignment="TOP_LEFT" spacing="15.0">
+                     <padding>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <VBox minWidth="280.0" prefWidth="300.0" spacing="10.0" styleClass="card-pane">
+                           <children>
+                              <Label styleClass="subtitle-label" text="Son 10 Günde Eklenen Filmler:" />
+                              <ListView fx:id="listSonEklenenFilmler" prefHeight="170.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+
+                        <VBox minWidth="280.0" prefWidth="300.0" spacing="10.0" styleClass="card-pane">
+                           <children>
+                              <Label styleClass="subtitle-label" text="En Popüler Filmler (Top 10):" />
+                              <ListView fx:id="listPopulerFilmler" prefHeight="170.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+
+                        <VBox minWidth="280.0" prefWidth="300.0" spacing="10.0" styleClass="card-pane">
+                           <children>
+                              <Label styleClass="subtitle-label" text="En Popüler Film Türleri (Top 5):" />
+                              <ListView fx:id="listPopulerTurler" prefHeight="170.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox minWidth="280.0" prefWidth="300.0" spacing="10.0" styleClass="card-pane">
+                           <children>
+                              <Label styleClass="subtitle-label" text="En Yoğun Rez. Günleri:" />
+                              <ListView fx:id="listYogunRezervasyonGunleri" prefHeight="170.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+
+                        <VBox minWidth="280.0" prefWidth="300.0" spacing="10.0" styleClass="card-pane">
+                           <children>
+                              <Label styleClass="subtitle-label" text="En Yoğun Rez. Saatleri:" />
+                              <ListView fx:id="listYogunRezervasyonSaatleri" prefHeight="170.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                        <VBox minWidth="280.0" prefWidth="300.0" spacing="10.0" styleClass="card-pane">
+                           <children>
+                              <Label styleClass="subtitle-label" text="Salonların Ort. Doluluğu (Geçmiş):" />
+                              <ListView fx:id="listViewOrtalamaSalonDoluluk" prefHeight="170.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+
+                        <VBox minWidth="320.0" prefWidth="350.0" spacing="10.0" styleClass="card-pane"> <children>
+                              <Label styleClass="subtitle-label" text="Bugünkü Yaklaşan Seans Dolulukları:" />
+                              <ListView fx:id="listViewAnlikSeansDoluluk" prefHeight="170.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+            </ScrollPane>
+            <Separator prefWidth="200.0" />
+
+            <VBox alignment="TOP_LEFT" maxWidth="800.0" spacing="12.0" styleClass="card-pane">
+               <children>
+                  <Label styleClass="subtitle-label" text="Detaylı İstatistikler ve Koltuk Durumu:">
+                       <font>
+                          <Font size="18.0" />
+                       </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@icons/placeholder.png" /></image></ImageView>
+                        <Label minWidth="150.0" styleClass="filter-label" text="İl Seçin:" />
+                        <ComboBox fx:id="comboIllerDetay" onAction="#handleIlSecimDetay" prefWidth="250.0" promptText="İl Seçiniz" />
+                        <Label alignment="CENTER_RIGHT" minWidth="160.0" styleClass="filter-label" text="Bu İldeki Salon Sayısı:" />
+                        <Label fx:id="lblIlSalonSayisi" minWidth="30.0" style="-fx-font-weight: bold;" text="-" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@icons/cinema2.png" /></image></ImageView>
+                        <Label minWidth="150.0" styleClass="filter-label" text="Salon Seçin:" />
+                        <ComboBox fx:id="comboSalonlarDetay" disable="true" onAction="#handleSalonSecimDetay" prefWidth="250.0" promptText="Önce İl Seçin" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@icons/videoplayer.png" /></image></ImageView>
+                        <Label minWidth="150.0" styleClass="filter-label" text="Film Seçin:" />
+                        <ComboBox fx:id="comboFilmlerDetay" disable="true" onAction="#handleFilmSecimDetay" prefWidth="250.0" promptText="Önce Salon Seçin" />
+                     </children>
+                  </HBox>
+                  <Label style="-fx-font-weight: bold; -fx-font-size:14px;" text="Bu Film İçin Aktif Seanslar:">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ListView fx:id="listViewSeanslarDetay" onMouseClicked="#handleSeansSecimListeden" prefHeight="100.0" />
+                  <Label fx:id="lblSeciliSeansBosKoltuk" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Seans Seçiniz...">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label style="-fx-font-weight: bold; -fx-font-size:14px;" text="Koltuk Doluluk Durumu (Görsel):">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ScrollPane fx:id="scrollPaneKoltuklar" fitToWidth="true" prefHeight="120.0" style="-fx-border-color: #CFD8DC; -fx-background-color: white; -fx-border-radius: 4px;">
+                     <content>
+                        <FlowPane fx:id="flowPaneKoltuklarDetay" alignment="CENTER" hgap="6.0" prefWrapLength="380.0" vgap="6.0">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" prefHeight="70.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnAnaMenu" mnemonicParsing="false" onAction="#handleAnaMenu" prefHeight="56.0" prefWidth="185.0" styleClass="cancel-button" text="Ana Menüye Dön">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image><Image url="@icons/home.png" /></image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="30.0" right="30.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>

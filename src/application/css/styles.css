@@ -1,0 +1,505 @@
+/* styles.css - Modernleştirilmiş Tam Hali */
+
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 13px; /* Temel font boyutu */
+    -fx-background-color: #f4f6f8; /* Daha açık, modern bir arka plan */
+}
+
+/* === BAŞLIKLAR === */
+.title-label { /* Ana ekran başlıkları, modal başlıkları */
+    -fx-font-size: 28px; /* Ana başlıklar için biraz daha büyük */
+    -fx-font-weight: 600; /* semibold */
+    -fx-text-fill: #34495e; /* Koyu mavi-gri */
+    -fx-padding: 10px 0 15px 0; /* Üst ve alt boşluk */
+    -fx-alignment: center; /* Başlıkları ortala */
+}
+
+.subtitle-label { /* Daha küçük başlıklar, bölüm başlıkları */
+    -fx-font-size: 18px; /* Alt başlıklar için */
+    -fx-font-weight: 500; /* medium */
+    -fx-text-fill: #34495e;
+    -fx-padding-bottom: 10px; /* Alt boşluk */
+}
+
+/* === GENEL ETİKETLER === */
+.label {
+    -fx-text-fill: #37474F; /* Koyu gri-mavi */
+    -fx-font-size: 14px; /* Standart etiket boyutu */
+}
+.main-dashboard-center-vbox {
+    -fx-background-color: #ffffff; /* Arka plan rengi beyaz */
+    -fx-background-radius: 10px;  /* Köşeleri 10 piksel yuvarlatır */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 3); /* Yumuşak bir gölge efekti */
+    /* İsteğe bağlı: İçerikle kenarlar arasında biraz daha boşluk isterseniz padding'i burada da tanımlayabilirsiniz,
+       ancak FXML'deki padding tanımı genellikle yeterlidir.
+       -fx-padding: 20px;
+    */
+}
+
+.main-dashboard-background {
+    -fx-background-image: url("/application/icons/Sinema.png"); /* BAŞTAKİ / İŞARETİ ÖNEMLİ */
+    -fx-background-size: cover; /* Resmi panele yayarak kaplar, oranları korur */
+    -fx-background-repeat: no-repeat; /* Resmin tekrarlanmasını engeller */
+    -fx-background-position: center center; /* Resmi ortalar */
+    -fx-background-color: #f4f6f8; /* Resim yüklenemezse görünecek yedek renk */
+}
+.filter-label { /* ComboBox'ların veya filtre alanlarının önündeki etiketler için */
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+    -fx-font-weight: 500; /* medium */
+}
+.selection-row-hoverable:hover { /* Hızlı Seans Bul kartındaki HBox'lara bu sınıfı ekleyin */
+    -fx-background-color: #f9f9f9; /* Çok hafif bir gri */
+    /* -fx-border-color: #d0d0d0; */ /* VEYA hafif bir kenarlık */
+    /* -fx-border-width: 0 0 1px 0; */ /* Sadece alt kenarlık */
+    -fx-background-radius: 4px; /* Köşeleri yuvarlat */
+}
+
+.info-label-dashboard { /* MainDashboard'daki Boş Koltuk Sayısı gibi bilgi etiketleri için */
+    -fx-font-size: 15px;
+    -fx-font-weight: 500; /* medium */
+    -fx-text-fill: #2980b9; /* Bilgi için mavi bir ton */
+    -fx-padding: 5px 0;
+}
+
+/* === BUTONLAR === */
+.button {
+    -fx-background-color: #5C6BC0; /* İndigo - Genel buton rengi */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 20px;
+    -fx-background-radius: 6px; /* Hafif yuvarlak köşeler */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 5, 0.0, 0, 2); /* Daha yumuşak gölge */
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: #3F51B5; /* Üzerine gelince koyulaşsın */
+}
+.button:pressed {
+    -fx-background-color: #303F9F; /* Basılınca daha da koyulaşsın */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 3, 0, 1, 1);
+}
+.button:disabled {
+    -fx-opacity: 0.5; /* Devre dışı bırakılmış butonlar için solukluk */
+}
+
+/* Özel Amaçlı Butonlar (Genel .button stilini ezerler) */
+.action-button { /* Ana eylem butonları (Yeşil örnek) */
+    -fx-background-color: #27ae60 !important;
+    -fx-padding: 10px 25px !important; /* Biraz daha geniş padding */
+}
+.admin-panel-tile-button {
+    -fx-pref-width: 170px; /* Buton genişliği */
+    -fx-pref-height: 130px; /* Buton yüksekliği */
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e; /* Koyu metin rengi */
+    -fx-text-alignment: center;
+    -fx-background-color: #FFFFFF; /* Kart gibi beyaz arka plan */
+    -fx-border-color: #CFD8DC;    /* Hafif kenarlık */
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;       /* Yuvarlak köşeler */
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 8, 0, 0, 2); /* Hafif gölge */
+    -fx-padding: 10px; /* İç boşluk */
+    -fx-cursor: hand;
+}
+
+.admin-panel-tile-button:hover {
+    -fx-border-color: #A9CCE3; /* Vurgu rengiyle uyumlu kenarlık */
+    -fx-background-color: #f8f9fa; /* Hafifçe renk değişimi */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 12, 0, 0, 3); /* Gölgeyi belirginleştir */
+}
+
+.admin-panel-tile-button:pressed {
+    -fx-background-color: #e9ecef;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 5, 0, 1, 1);
+}
+
+.admin-panel-tile-button .label { /* Buton içindeki metin için özel ayar gerekirse */
+    -fx-wrap-text: true; /* Metin uzunsa alt satıra kaydır */
+}
+
+.action-button:hover { -fx-background-color: #229954 !important; }
+.action-button:pressed { -fx-background-color: #1e8449 !important; }
+
+.delete-button { /* Silme butonları (Kırmızı örnek) */
+    -fx-background-color: #e74c3c !important; /* Daha canlı bir kırmızı */
+}
+.delete-button:hover { -fx-background-color: #c0392b !important; }
+.delete-button:pressed { -fx-background-color: #a93226 !important; }
+
+.clear-button, .cancel-button { /* Temizle, Kapat, Geri Dön gibi nötr butonlar */
+    -fx-background-color: #bdc3c7 !important; /* Açık gri */
+    -fx-text-fill: #2c3e50 !important; /* Koyu metin */
+}
+.clear-button:hover, .cancel-button:hover { -fx-background-color: #a5acb0 !important; }
+.clear-button:pressed, .cancel-button:pressed { -fx-background-color: #95a0a5 !important; }
+.poster-tile {
+    -fx-padding: 10px;
+    -fx-alignment: TOP_CENTER; /* İçeriği üste ve ortaya hizala */
+    -fx-spacing: 8px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0, 0, 1);
+    -fx-cursor: hand;
+    -fx-pref-width: 180px; /* Kutucuk için sabit genişlik */
+    -fx-max-width: 180px;
+    -fx-transition: all 0.2s ease-in-out; /* Animasyon için geçiş özelliği */
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+.poster-tile:hover {
+    -fx-border-color: #2980b9; /* Vurgu rengi */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-scale-x: 1.05; /* Hover olduğunda X ekseninde %5 büyü */
+    -fx-scale-y: 1.05; /* Hover olduğunda Y ekseninde %5 büyü */
+}
+
+.poster-tile .image-view { /* Afiş resmi için */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2); /* Hafif gölge */
+    -fx-transition: all 0.2s ease-in-out; /* Afiş için de geçiş (isteğe bağlı) */
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+.poster-tile:hover .image-view {
+    -fx-scale-x: 1.02; /* Afişi de biraz büyütebiliriz (isteğe bağlı) */
+    -fx-scale-y: 1.02;
+}
+
+.poster-tile .label { /* Film başlığı için */
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-pref-width: 150px; /* Etiketin genişliği, taşmayı önler */
+    -fx-min-height: 40px; /* Başlık için minimum yükseklik (iki satır için) */
+    -fx-transition: all 0.2s ease-in-out; /* Başlık için de geçiş (isteğe bağlı) */
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+.poster-tile:hover .label {
+    /* İsteğe bağlı olarak başlığı da biraz hareketlendirebilirsiniz */
+}
+
+/* === GİRİŞ ALANLARI (TextField, ComboBox vb.) === */
+.text-field,
+.password-field,
+.combo-box-base,
+.date-picker,
+.text-area {
+    -fx-pref-height: 38px; /* Standart yükseklik */
+    -fx-font-size: 14px;
+    -fx-border-color: #D0D5DB; /* Daha yumuşak border rengi */
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px; /* Hafif yuvarlak köşeler */
+    -fx-background-radius: 6px;
+    -fx-prompt-text-fill: #90A4AE; /* Placeholder metin rengi */
+    -fx-padding: 5px 10px; /* İç boşluk */
+}
+
+.text-field:focused,
+.password-field:focused,
+.combo-box-base:focused, /* ComboBox'ın ana bölümü odaklandığında */
+.date-picker .text-field:focused, /* DatePicker içindeki text alanı odaklandığında */
+.text-area:focused {
+    -fx-border-color: #2980b9; /* Vurgu rengi (örnek: mavi) */
+    -fx-border-width: 1.5px; /* Odaklanınca border biraz kalınlaşsın */
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(41, 128, 185, 0.2), 5, 0, 0, 0); /* Odaklanınca hafif bir dış ışıma */
+}
+.text-area {
+    -fx-pref-height: 100px; /* TextArea için özel yükseklik */
+    -fx-wrap-text: true; /* Metin kaydırmayı aktif et */
+}
+
+.combo-box .arrow-button { -fx-background-color: transparent; }
+.combo-box .arrow {
+    -fx-background-color: #2980b9; /* Ok rengi vurgu rengiyle aynı olabilir */
+    -fx-shape: "M0,-4L4,0L0,4Z"; /* Standart ok şekli */
+}
+.combo-box .list-cell { /* ComboBox açılır liste elemanları */
+    -fx-padding: 5px 10px;
+}
+.combo-box .list-cell:hover {
+    -fx-background-color: #eaf2f8; /* Vurgu renginin çok açık tonu */
+    -fx-text-fill: #2980b9;
+}
+
+
+/* === TABLEVIEW === */
+.table-view {
+    -fx-border-color: #CFD8DC; /* Hafif border */
+    -fx-background-color: white;
+    -fx-background-radius: 8px; /* Köşeleri yuvarlatma */
+    -fx-border-radius: 8px;
+    -fx-selection-bar: #a9cce3; /* Seçili satır arka planı (açık mavi) */
+    -fx-selection-bar-text: #283747; /* Seçili satır metin rengi */
+}
+.table-view .column-header-background {
+    -fx-background-color: #EAECEE; /* Başlık arka planı (çok açık gri) */
+    -fx-background-radius: 8px 8px 0 0; /* Sadece üst köşeler yuvarlak */
+    -fx-padding: 12px 8px; /* Başlık iç boşluğu */
+}
+.table-view .column-header .label {
+    -fx-text-fill: #34495E; /* Başlık metin rengi */
+    -fx-font-weight: 600; /* semibold */
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+}
+.table-view .table-cell {
+    -fx-padding: 10px 8px; /* Hücre iç boşluğu */
+    -fx-border-color: transparent #E0E0E0 transparent transparent; /* Sağda ince hücre ayıracı */
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+}
+.table-view .filler { /* Tablo başlıklarının sağındaki boş alan */
+    -fx-background-color: #EAECEE;
+}
+.table-view .placeholder .label { /* Tabloda veri yokken gösterilen mesaj */
+    -fx-text-fill: #546E7A;
+    -fx-font-size: 14px;
+    -fx-padding: 20px;
+}
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+.table-view .virtual-flow .scroll-bar:vertical .thumb,
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color: #bdc3c7;
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+
+/* === MENUBAR === */
+.menu-bar {
+    -fx-background-color: #FFFFFF; /* Arka planı beyaz veya çok açık gri (#ECF0F1) */
+    -fx-border-width: 0 0 1px 0; /* Altına ince bir çizgi */
+    -fx-border-color: #E0E0E0; /* Çizgi rengi */
+}
+.menu-bar .label { /* Menü başlıkları (Dosya, Yardım vs.) */
+    -fx-font-size: 13px;
+    -fx-font-weight: 500; /* medium */
+    -fx-text-fill: #34495e; /* Koyu mavi-gri */
+    -fx-padding: 5px 10px;
+}
+.menu:hover {
+    -fx-background-color: #eaf2f8;
+}
+.menu-item {
+    -fx-padding: 8px 15px;
+}
+.menu-item .label { /* Menü içindeki öğeler */
+    -fx-text-fill: #34495e;
+    -fx-font-weight: normal;
+}
+.menu-item:focused { /* Odaklanmış veya üzerine gelinmiş menü öğesi */
+    -fx-background-color: #eaf2f8; /* Vurgu renginin çok açık bir tonu */
+}
+.menu-item:focused .label {
+    -fx-text-fill: #2980b9; /* Vurgu rengi */
+}
+
+/* === KART GÖRÜNÜMLERİ === */
+.card-pane { /* Admin paneli alt ekranları, Dashboard detayları gibi genel kartlar */
+    -fx-background-color: white;
+    -fx-padding: 25px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 3);
+    -fx-spacing: 15px; /* Eğer VBox veya HBox ise elemanlar arası boşluk */
+}
+
+.selection-card { /* MainDashboard'daki filtreleme alanı için özel kart */
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 25px 30px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 15, 0.0, 0, 4);
+    /* -fx-spacing FXML'den VBox'a verilmeli */
+}
+.separator .line {
+    -fx-border-color: #e0e0e0; /* Çok açık gri bir çizgi rengi */
+    -fx-border-width: 1px;
+}
+.selection-card .separator { /* Kart içindeki ayırıcılar için ek boşluk */
+    -fx-padding: 8px 0; /* Üst ve alt boşluğunu artırır */
+}
+
+.welcome-banner {
+    -fx-padding: 0 0 25px 0; /* Alt boşluğu artırıldı (önceden 10px idi) */
+    -fx-border-color: transparent transparent #d1d8e0 transparent; /* Sadece altına hafif bir sınır */
+    -fx-border-width: 1px;
+}
+.info-label-low-seats {
+    -fx-text-fill: #ff8c00; /* Koyu Turuncu */
+    -fx-font-weight: bold;
+}
+.info-label-no-seats {
+    -fx-text-fill: #cc0000; /* Koyu Kırmızı */
+    -fx-font-weight: bold;
+}
+.stat-mini-card {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15px 25px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
+    -fx-alignment: center;
+    -fx-min-width: 180px; /* Kartların minimum genişliği */
+}
+.stat-mini-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 15, 0, 0, 4); /* Gölgeyi biraz daha belirgin yap */
+    -fx-scale-x: 1.02; /* Hafifçe büyüt */
+    -fx-scale-y: 1.02;
+    -fx-border-color: #A9CCE3; /* Üzerine gelince hafif bir kenarlık */
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px; /* Kenarlık için de radius */
+}
+.list-view .list-cell:hover {
+    -fx-background-color: #eaf2f8; /* Çok açık mavi veya gri bir ton */
+    -fx-text-fill: #2980b9; /* İsteğe bağlı: Metin rengini de değiştirebilirsiniz */
+}
+.legend-color-box {
+    -fx-border-color: #7f8c8d; /* Kutucuk etrafına hafif bir sınır */
+    -fx-border-width: 1px;
+    -fx-border-radius: 2px;
+    /* koltuk-bos-dashboard ve koltuk-dolu-dashboard sınıflarından arka plan rengini alacaklar */
+}
+
+.stat-mini-card-title {
+    -fx-font-size: 13px;
+    -fx-text-fill: #546E7A; /* Daha yumuşak bir metin rengi */
+}
+
+.stat-mini-card-value {
+    -fx-font-size: 28px; /* Sayıyı büyük göster */
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e; /* Başlık rengiyle uyumlu */
+}
+
+.header-pane { /* Ekranların üstündeki genel başlık alanı için (BiletlerimEkranı gibi) */
+    -fx-padding: 20px;
+    -fx-alignment: center;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: #a9cce3; /* Açık mavi bir alt çizgi */
+}
+.app-close-button {
+    -fx-background-color: transparent; /* Arka planı şeffaf */
+    -fx-padding: 5px 8px;             /* İç boşluk */
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.app-close-button:hover {
+    -fx-background-color: #e81123; /* Üzerine gelince kırmızı bir arka plan (Windows close gibi) */
+    -fx-background-radius: 4px;
+}
+
+/* Kırmızı arka plan üzerinde ikonunuz koyu renkliyse,
+   ikonu beyaz yapmak için :hover durumunda ImageView'a özel stil ekleyebilirsiniz: */
+.app-close-button:hover .image-view {
+    -fx-effect: dropshadow(gaussian, white, 1, 1, 0, 0); /* Bu, ikonu biraz daha parlak gösterebilir */
+    /* Veya ikon dosyanızın beyaz versiyonunu yükleyebilirsiniz (daha karmaşık) */
+}
+
+
+/* === KOLTUK BUTONLARI (KoltukSecimEkrani.fxml için) === */
+/* Bu stiller KoltukSecimController'da Java kodu ile de ayarlanıyor olabilir.
+   CSS'ten yönetmek daha merkezi bir kontrol sağlar.
+   Eğer Java'dan setStyle() ile atanıyorsa, buradaki !important gerekebilir.
+   Mevcut yapınızda !important kullanıldığı için koruyorum. */
+.koltuk-buton {
+    -fx-font-weight: bold !important;
+    -fx-font-size: 12px !important;
+    -fx-alignment: center !important;
+    -fx-border-color: #B0BEC5 !important;
+    -fx-border-width: 1px !important;
+    -fx-border-radius: 4px !important;
+    -fx-background-radius: 4px !important;
+    -fx-padding: 5px 8px !important;
+    /* Boyutlar Java kodundan setPrefSize ile ayarlanıyor. */
+}
+
+.koltuk-bos {
+    -fx-background-color: #A5D6A7 !important; /* Yumuşak yeşil */
+    -fx-text-fill: #1B5E20 !important; /* Koyu yeşil metin */
+}
+.koltuk-bos:hover {
+    -fx-background-color: #81C784 !important;
+}
+
+.koltuk-dolu {
+    -fx-background-color: #EF9A9A !important; /* Yumuşak kırmızı */
+    -fx-text-fill: white !important;
+    -fx-opacity: 0.75 !important;
+}
+
+.koltuk-secili {
+    -fx-background-color: #7986CB !important; /* Yumuşak indigo/mavi - Seçili */
+    -fx-text-fill: white !important;
+    -fx-border-color: #3F51B5 !important;
+    -fx-border-width: 2px !important;
+}
+
+/* === DASHBOARD İSTATİSTİKLERİ EKRANI İÇİN KOLTUKLAR (DashboardStatsController) === */
+/* Bu stiller sadece DashboardStatsScreen.fxml'deki tıklanamayan koltuklar içindir. */
+.koltuk-buton-dashboard {
+    -fx-font-size: 10px !important;
+    -fx-padding: 4px 6px !important;
+    -fx-min-width: 40px !important;
+    -fx-pref-width: 40px !important;
+    -fx-min-height: 30px !important;
+    -fx-pref-height: 30px !important;
+    -fx-border-color: #B0BEC5 !important;
+    -fx-border-width: 1px !important;
+    -fx-border-radius: 3px !important;
+    -fx-background-radius: 3px !important;
+}
+.koltuk-dolu-dashboard { /* Bu sınıf DashboardStatsController'da setStyle ile atanıyor */
+    -fx-background-color: #FF6347 !important; /* Tomato / Kırmızımsı */
+    -fx-text-fill: white !important;
+}
+.koltuk-bos-dashboard { /* Bu sınıf DashboardStatsController'da setStyle ile atanıyor */
+    -fx-background-color: #90EE90 !important; /* LightGreen / Yeşilimsi */
+    -fx-text-fill: #2E7D32 !important; /* Koyu yeşil metin */
+}
+
+/* === SCROLLPANE === */
+.scroll-pane {
+    -fx-background-color: transparent; /* İçerikle aynı arka planı alsın */
+    -fx-fit-to-width: true; /* Genellikle istenir */
+}
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+.scroll-pane .scroll-bar:vertical,
+.scroll-pane .scroll-bar:horizontal{
+   -fx-background-color:transparent;
+}
+.scroll-pane .scroll-bar:vertical .thumb,
+.scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #c5c5c5; /* Scrollbar çubuğu rengi */
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+/* === HYPERLINK === */
+.hyperlink {
+    -fx-text-fill: #2980b9; /* Mavi */
+    -fx-font-size: 13px;
+    -fx-border-color: transparent; /* Alt çizgiyi kaldır */
+}
+.hyperlink:hover {
+    -fx-underline: true; /* Üzerine gelince altını çiz */
+}
+.hyperlink:visited {
+    -fx-text-fill: #8e44ad; /* Ziyaret edilmiş link (mor) - Opsiyonel */
+}

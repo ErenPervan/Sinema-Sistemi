@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" styleClass="root" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SalonYonetimiController">
+   <top>
+      <HBox alignment="CENTER" spacing="10.0" styleClass="header-pane">
+         <children>
+            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/cinema2.png" /> </image>
+            </ImageView>
+            <Label text="Salon Yönetimi" styleClass="title-label" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="tableViewSalonlar" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colSalonID" prefWidth="75.0" text="Salon ID" />
+          <TableColumn fx:id="colSalonAdi" prefWidth="200.0" text="Salon Adı" />
+          <TableColumn fx:id="colSehirAdi" prefWidth="150.0" text="Şehir" />
+          <TableColumn fx:id="colKapasite" prefWidth="100.0" text="Kapasite" />
+        </columns>
+         <BorderPane.margin>
+            <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+         </BorderPane.margin>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+   <bottom>
+      <VBox alignment="CENTER" spacing="15.0" styleClass="card-pane" maxWidth="550.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image><Image url="@icons/business.png" /></image>
+                  </ImageView>
+                  <Label text="Şehir Seçin:" styleClass="filter-label" minWidth="90.0" />
+                  <ComboBox fx:id="comboSehirler" prefWidth="300.0" promptText="Şehir seçiniz" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image><Image url="@icons/cinema2.png" /></image> </ImageView>
+                  <Label text="Salon Adı:" styleClass="filter-label" minWidth="90.0" />
+                  <TextField fx:id="txtSalonAdi" prefWidth="300.0" promptText="Salon adı" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Label text="(Kapasite her salon için sabit 15'tir)" style="-fx-font-style: italic; -fx-text-fill: gray;" />
+            <HBox alignment="CENTER" spacing="10.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="btnEkle" mnemonicParsing="false" onAction="#handleEkleSalon" prefWidth="110.0" text="Ekle" styleClass="action-button" />
+                  <Button fx:id="btnGuncelle" mnemonicParsing="false" onAction="#handleGuncelleSalon" prefWidth="110.0" text="Güncelle" styleClass="button" />
+                  <Button fx:id="btnSil" mnemonicParsing="false" onAction="#handleSilSalon" prefWidth="110.0" text="Sil" styleClass="delete-button" />
+                  <Button fx:id="btnTemizle" mnemonicParsing="false" onAction="#handleTemizleForm" prefWidth="110.0" text="Temizle" styleClass="clear-button">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image><Image url="@icons/broom.png" /></image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <Button fx:id="btnKapat" mnemonicParsing="false" onAction="#handleKapat" styleClass="cancel-button" text="Kapat">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

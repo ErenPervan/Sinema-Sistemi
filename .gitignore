@@ -1,0 +1,21 @@
+# Eclipse IDE'ye özel ayar dosyaları
+.settings/
+.classpath
+.project
+
+# Derlenmiş Java class dosyalarının olduğu klasör
+# Bu klasördeki her şey src'den otomatik olarak oluşturulur
+/bin/
+
+# JavaFX build dosyası
+build.fxbuild
+
+# Genel log dosyaları
+*.log
+
+# Proje dışa aktarıldığında oluşan paket dosyaları
+*.jar
+*.war
+
+# Kullanıcıya özel diğer dosyalar
+.metadata

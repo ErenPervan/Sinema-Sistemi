@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1000.0" prefWidth="1800.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BiletlerimController">
+   <top>
+      <VBox alignment="CENTER" styleClass="header-pane">
+         <children>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/ticket2.png" />
+                     </image>
+                  </ImageView>
+                  <Label styleClass="title-label" text="Biletlerim">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+             <Insets bottom="20.0" left="30.0" right="30.0" top="15.0" />
+         </BorderPane.margin>
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <CheckBox fx:id="checkEskiBiletleriGoster" text="Geçmiş Biletleri de Göster">
+                     <font>
+                        <Font size="14.0" />
+                     </font></CheckBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" /> </padding>
+            </HBox>
+            <TableView fx:id="tableViewBiletlerim" VBox.vgrow="ALWAYS"> <columns>
+ <TableColumn fx:id="colFilmAdi" prefWidth="170.0" text="Film Adı" />
+                <TableColumn fx:id="colTurAdi" prefWidth="100.0" text="Film Türü" />
+                <TableColumn fx:id="colSehirAdi" prefWidth="90.0" text="Şehir" />
+                <TableColumn fx:id="colSalonAdi" prefWidth="110.0" text="Salon Adı" />
+                <TableColumn fx:id="colSeansZamani" prefWidth="120.0" text="Seans Zamanı" />
+                <TableColumn fx:id="colKoltukNo" prefWidth="70.0" text="Koltuk No" />
+                <TableColumn fx:id="colAlinmaTarihi" prefWidth="120.0" text="Alınma Tarihi" />
+                <TableColumn fx:id="colBiletGoruntule" prefWidth="90.0" text="Bilet" />
+                <TableColumn fx:id="colIptalEt" prefWidth="90.0" text="İptal" /> 
+              </columns>
+               <placeholder>
+                  <Label text="Henüz satın alınmış biletiniz bulunmamaktadır.">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+               </placeholder>
+               <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" prefHeight="70.0" spacing="10.0" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <Button fx:id="btnAnaMenuDon" onAction="#handleAnaMenuDon" styleClass="cancel-button" text="Ana Menüye Dön">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="30.0" right="30.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>

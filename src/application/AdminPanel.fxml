@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminPanelController">
+   <top>
+      <HBox alignment="CENTER" spacing="10.0" styleClass="header-pane">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/admin-panel.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="title-label" text="Admin Paneli">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+         </children>
+         </HBox>
+   </top>
+   <center>
+      <TilePane alignment="CENTER" hgap="25.0" prefColumns="3" tileAlignment="CENTER" vgap="25.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <children>
+            <Button fx:id="btnIlYonetimi" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleIlYonetimi" prefHeight="77.0" prefWidth="116.0" styleClass="admin-panel-tile-button" text="İl Yönetimi">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/business.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnSalonYonetimi" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleSalonYonetimi" prefHeight="77.0" prefWidth="116.0" styleClass="admin-panel-tile-button" text="Salon Yönetimi">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/cinema2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnFilmYonetimi" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleFilmYonetimi" prefHeight="77.0" prefWidth="116.0" styleClass="admin-panel-tile-button" text="Film Yönetimi">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/script.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnTurYonetimi" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleTurYonetimi" styleClass="admin-panel-tile-button" text="Film Türü Yönetimi">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/genres.png" /> </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnSeansYonetimi" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleSeansYonetimi" prefHeight="77.0" prefWidth="116.0" styleClass="admin-panel-tile-button" text="Seans Yönetimi">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/movie-reel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnKullaniciYonetimi" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleKullaniciYonetimi" prefHeight="77.0" prefWidth="116.0" styleClass="admin-panel-tile-button" text="Kullanıcı Yönetimi">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/management.png" /> </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnRezervasyonYonetimi" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleRezervasyonYonetimi" styleClass="admin-panel-tile-button" text="Rezervasyon Yönetimi">
+    <graphic>
+        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../Downloads/reserve.png" /> </image>
+        </ImageView>
+    </graphic>
+</Button>
+            <Button fx:id="btnHatirlaticiGonder" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleHatirlaticiGonder" prefHeight="77.0" prefWidth="116.0" styleClass="admin-panel-tile-button" text="Hatırlatma E-postalarını Gönder">
+   <graphic>
+      <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/communication.png" /> </image>
+      </ImageView>
+   </graphic>
+</Button>
+         </children>
+      </TilePane>
+   </center>
+   <bottom>
+       <HBox alignment="CENTER_RIGHT" prefHeight="70.0" spacing="10.0" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <Button fx:id="btnAnaMenu" mnemonicParsing="false" onAction="#handleAnaMenu" styleClass="cancel-button" text="Ana Menüye Dön">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets /> 
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="15.0" left="30.0" right="30.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
